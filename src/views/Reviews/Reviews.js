@@ -5,6 +5,8 @@ import apiService from '../../services/apiService';
 import LoaderComponent from '../../components/Loader';
 import Status from '../../services/status';
 import ShowMore from 'react-simple-show-more';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styles from './Reviews.module.css';
 
 function Reviews() {
@@ -18,7 +20,9 @@ function Reviews() {
       .getMovieReviews(movieId)
       .then(results => {
         if (results.length === 0) {
-          throw new Error("Sorry. We don't have any reviews on this movie yet");
+          toast.error("We don't have any reviews for this movie.");
+          setStatus(Status.IDLE);
+          return;
         }
         setReviews(results);
         setStatus(Status.RESOLVED);
@@ -27,7 +31,7 @@ function Reviews() {
         setError(error);
         setStatus(Status.REJECTED);
       });
-  }, [movieId]);
+  }, [movieId, error]);
 
   return (
     <>
