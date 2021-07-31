@@ -1,0 +1,30 @@
+.cast {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  min-height: 450px;
+  margin: -15px;
+}
+
+.item {
+  width: 200px;
+  height: 350px;
+  margin: 15px;
+}
+
+.photo {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.character {
+  font-size: 15px;
+  color: rgb(113, 116, 119);
+}

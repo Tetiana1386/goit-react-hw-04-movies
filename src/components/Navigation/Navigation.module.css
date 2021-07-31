@@ -1,0 +1,20 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  padding: 0 40px;
+  box-shadow: var(--boxShadow);
+}
+
+.navLink {
+  display: inline-block;
+  padding: 12px;
+  font-weight: 500;
+  color: var(--primaryTextColor);
+  font-size: 18px;
+}
+
+.activeLink {
+  composes: navLink;
+  color: var(--accentColor);
+}
