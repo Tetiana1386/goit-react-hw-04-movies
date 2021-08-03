@@ -7,7 +7,6 @@ import Status from '../../services/status';
 import LoaderComponent from '../../components/Loader';
 import ErrorComponent from '../../components/Error';
 import noImageFound from '../../img/no_image.jpeg';
-
 import styles from './HomePage.module.css';
 
 function HomePage() {

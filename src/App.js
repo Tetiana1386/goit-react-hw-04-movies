@@ -34,7 +34,6 @@ function App() {
   return (
     <Container>
       <Header />
-
       <Suspense fallback={<LoaderComponent />}>
         <Switch>
           <Route path="/" exact>

@@ -3,6 +3,7 @@ import {
   NavLink,
   useParams,
   useRouteMatch,
+  Switch,
   Route,
   useHistory,
   useLocation,
@@ -112,8 +113,8 @@ function MovieDetailsPage() {
             </li>
           </ul>
 
-          {
-            <Suspense fallback={<LoaderComponent />}>
+          <Suspense fallback={<LoaderComponent />}>
+            <Switch>
               <Route path={`${path}/cast`}>
                 {status === Status.RESOLVED && <Cast />}
               </Route>
@@ -121,8 +122,8 @@ function MovieDetailsPage() {
               <Route path={`${path}/reviews`}>
                 {status === Status.RESOLVED && <Reviews />}
               </Route>
-            </Suspense>
-          }
+            </Switch>
+          </Suspense>
         </>
       )}
     </main>
